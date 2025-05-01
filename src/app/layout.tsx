@@ -1,7 +1,7 @@
 "use client"
-import type { Metadata } from "next";
 import "./globals.css";
 import { FanProvider } from "@/context/FanContext"
+import { SessionProvider } from "next-auth/react";
  
 
 export default function RootLayout({
@@ -12,7 +12,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body>
-        <FanProvider>{children}</FanProvider>
+        <FanProvider>
+            <SessionProvider>{children}</SessionProvider>
+        </FanProvider>
       </body>
     </html>
   )
