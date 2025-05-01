@@ -1,9 +1,16 @@
-import Link from "next/link";
+'use client'
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+    const router = useRouter();
+
+    const handleGoToRegister = () => {
+    router.push('pages/register');
+    }
+
 	return (
 	 <main>
-        <Link href='/register'>Register</Link>
+        <button onClick={handleGoToRegister}>Register</button>
 	 </main>
 	);
 }

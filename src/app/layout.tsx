@@ -1,22 +1,19 @@
+"use client"
 import type { Metadata } from "next";
 import "./globals.css";
-
-
-export const metadata: Metadata = {
-  title: "Know your fan",
-  description: "",
-};
+import { FanProvider } from "@/context/FanContext"
+ 
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="pt-br">
       <body>
-        {children}
+        <FanProvider>{children}</FanProvider>
       </body>
     </html>
-  );
+  )
 }

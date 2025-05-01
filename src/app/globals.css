@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+form input[type="text"], input[type="email"]{
+    @apply border-2 rounded-md h-9
+}
+
+.form-fields{
+    @apply flex flex-col
+}
+
