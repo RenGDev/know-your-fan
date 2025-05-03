@@ -63,8 +63,6 @@ cp .env.example .env.local
 
 ```
 ini
-Copiar
-Editar
 NEXT_PUBLIC_API_URL=http://localhost:3001
 
 Obs.: A porta pode mudar conforme o backend.

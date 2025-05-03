@@ -21,7 +21,6 @@ export default function SummaryAndSubmit() {
     
   
     try {
-      // Envia os dados do fã para o backend
       const payload = {
         name: fanData.name,
         cpf: fanData.cpf,
@@ -38,8 +37,7 @@ export default function SummaryAndSubmit() {
       };
   
       await enviarFanData(payload);
-  
-      // Após o envio, redireciona para dashboard
+
       setTimeout(() => {
         router.push("/pages/dashboard");
       }, 3000);
