@@ -41,43 +41,50 @@ Este projeto é o frontend de um sistema de cadastro e validação de fãs, foca
 ```bash
 git clone https://github.com/seu-usuario/fanprofile-frontend.git
 cd fanprofile-frontend
-
+```
 
 ### 2. Instale as dependencias
 
+```
 npm install
 # ou
 yarn install
+```
 
 
 ### 3. Configure o arquivo .env.local
+```
 Crie um arquivo .env.local com base no .env.example:
 
-```bash
+bash
 cp .env.example .env.local
-
+```
 ### 4. Abra o .env.local e configure a URL da API:
 
+```
 ini
 Copiar
 Editar
 NEXT_PUBLIC_API_URL=http://localhost:3001
 
 Obs.: A porta pode mudar conforme o backend.
+```
 
-🚀 Executar o projeto
-
+### 5. 🚀 Executar o projeto
+ ```
 bash
 Copiar
 Editar
 npm run dev
 # ou
 yarn dev
-
-📡 Comunicação com o Backend
+```
+### 📡 Comunicação com o Backend
+```
 Todos os dados do fã são enviados para a API via serviço localizado em src/services/fansService.ts. A URL base da API é lida da variável de ambiente NEXT_PUBLIC_API_URL.
-
-💡 Funcionalidades
+```
+### 💡 Funcionalidades
+```
 Cadastro de fã com nome, CPF, e-mail e endereço
 
 Validação de CPF via OCR (documento de identidade)
@@ -87,20 +94,22 @@ Vinculação de redes sociais e perfis de jogos
 Resumo e submissão para API com feedback visual
 
 Interface responsiva e acessível (mobile-first)
-
-🛠️ Scripts úteis
+```
+### 🛠️ Scripts úteis
 Comando	Descrição
 npm run dev	Inicia servidor de desenvolvimento
 npm run build	Compila o projeto para produção
 npm run start	Inicia servidor de produção
 npm run lint	Executa verificação de lint
 
-🧪 Testes (caso adicione futuramente)
+### 🧪 Testes (caso adicione futuramente)
+```
 Você pode adicionar suporte a testes com:
 
 Jest
 
 React Testing Library
+```
 
 👤 Autor
 Desenvolvido por Lorenzo de Quadros Gonçalves
