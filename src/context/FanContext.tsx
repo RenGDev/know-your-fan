@@ -8,9 +8,15 @@ type FanData = {
     games?: string[]
     events?: string
     products?: string
-    nomeDetectado?: string;
-    cpfDetectado?: string;
-    documentoValidado?: boolean;
+    nomeDetectado?: string
+    cpfDetectado?: string
+    documentoValidado?: boolean
+    socials?: {
+        instagram?: string
+        twitter?: string
+        google?: string
+    }
+    gamingProfiles?: string[]
 }
 
 type FanContextType = {
@@ -20,26 +26,25 @@ type FanContextType = {
 
 const FanContext = createContext<FanContextType | undefined>(undefined)
 
-export function FanProvider({children} : {children: React.ReactNode}){
+export function FanProvider({ children }: { children: React.ReactNode }) {
     const [fanData, setFanDataState] = useState<FanData>({})
 
     const setFanData = (newData: Partial<FanData>) => {
         setFanDataState((prev) => ({
-          ...prev,
-          ...newData,
+            ...prev,
+            ...newData,
         }));
     }
 
-    return(
-
-        <FanContext.Provider value = {{fanData, setFanData}}>
+    return (
+        <FanContext.Provider value={{ fanData, setFanData }}>
             {children}
         </FanContext.Provider>
     )
 }
 
-export function useFan(){
+export function useFan() {
     const context = useContext(FanContext)
-    if(!context) throw new Error("useFan must be used inside FanProvider")
+    if (!context) throw new Error("useFan must be used inside FanProvider")
     return context
 }
