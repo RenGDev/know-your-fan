@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react-input-mask": "^3.0.6",
+    "framer-motion": "^12.9.4",
     "next": "15.3.1",
     "next-auth": "^4.24.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-input-mask-next": "^3.0.0-alpha.12",
     "tesseract.js": "^6.0.1"
   },
   "devDependencies": {

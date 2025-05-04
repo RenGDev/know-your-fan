@@ -87,14 +87,14 @@ export default function VerifyID() {
   };
 
   return (
-    <main className="flex flex-col gap-4 p-5 sm:p-8 max-w-lg mx-auto">
-      <h1 className="text-2xl sm:text-4xl font-bold mb-4 text-center">
+    <main className="flex flex-col gap-6 justify-center md:w-full p-6 sm:p-8 mx-auto min-h-screen bg-gradient-to-br from-black via-neutral-900 to-zinc-800 text-white">
+      <h1 className="text-2xl md:text-4xl sm:text-4xl font-bold mb-4 text-center">
         Verifique sua identidade
       </h1>
 
       {previewUrl && (
         <img
-          className="rounded-md w-full max-h-[400px] object-contain border mb-4"
+          className="rounded-md w-full md:w-96 m-auto mt-0 max-h-[400px] object-contain border mb-4"
           src={previewUrl}
           alt="Preview do documento"
         />
@@ -102,7 +102,7 @@ export default function VerifyID() {
 
       <label
         htmlFor="id"
-        className="py-4 border-2 border-dashed text-center rounded-md cursor-pointer bg-white text-sm font-medium hover:bg-gray-50 transition"
+        className="py-4 border-2 border-dashed  md:m-auto md:my-0 text-center md:w-96 rounded-md cursor-pointer bg-white text-black text-sm font-medium hover:bg-gray-50 transition"
       >
         Selecionar arquivo
         <input
@@ -116,7 +116,7 @@ export default function VerifyID() {
       </label>
 
       <button
-        className="bg-blue-600 text-white font-semibold py-3 rounded-md w-full mt-4 hover:bg-blue-700 transition"
+        className="bg-blue-600 text-white font-semibold md:m-auto md:w-96 md:my-0 py-3 rounded-md w-full mt-4 hover:bg-blue-700 transition"
         onClick={validateDocument}
         disabled={!file || loading}
       >
@@ -124,7 +124,7 @@ export default function VerifyID() {
       </button>
 
       {validationResult.status && (
-        <div className="bg-gray-100 p-4 rounded-md mt-6">
+        <div className={`bg-${validationResult.status === 'Válido' ? 'green' : 'red'}-100 p-4 text-black md:w-96 md:m-auto rounded-md mt-6`}>
           <h2 className="font-bold mb-2">Resultado da validação</h2>
           <p><strong>CPF detectado:</strong> {validationResult.cpf}</p>
           <p><strong>Status:</strong> {validationResult.status}</p>
@@ -134,7 +134,7 @@ export default function VerifyID() {
       <button
         onClick={handleNext}
         disabled={validationResult.status !== "Válido"}
-        className="bg-green-600 text-white font-semibold py-3 rounded-md w-full mt-4 hover:bg-green-700 transition disabled:opacity-50"
+        className="bg-green-600 text-white font-semibold md:m-auto md:w-96 md:my-0 py-3 rounded-md w-full mt-4 hover:bg-green-700 transition disabled:opacity-50"
       >
         Avançar
       </button>

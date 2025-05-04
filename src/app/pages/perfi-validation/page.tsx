@@ -31,9 +31,11 @@ export default function ProfileValidation() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-start bg-gray-50 p-6">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-black via-neutral-900 to-zinc-800 text-white p-6">
       <div className="w-full max-w-md lg:max-w-lg mx-auto">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-center">Mostre seus perfis de fã</h1>
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-center">
+          Mostre seus perfis de fã
+        </h1>
 
         <label className="flex flex-col gap-2 mb-4">
           <span className="font-medium">Cole o link do seu perfil Steam, Twitch ou Faceit</span>
@@ -42,14 +44,14 @@ export default function ProfileValidation() {
             placeholder="https://..."
             value={profileLink}
             onChange={(e) => setProfileLink(e.target.value)}
-            className="border-2 rounded-md p-2"
+            className="border-2 border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
           />
         </label>
 
         <button
           onClick={handleAnalyze}
           disabled={!profileLink || loading}
-          className="bg-blue-600 text-white w-full py-3 rounded-md hover:bg-blue-700 disabled:opacity-50"
+          className="bg-blue-600 text-white w-full py-3 rounded-md hover:bg-blue-700 disabled:opacity-50 transition-colors"
         >
           {loading ? "Analisando..." : "Analisar Perfil"}
         </button>
@@ -63,7 +65,7 @@ export default function ProfileValidation() {
         <button
           onClick={handleNext}
           disabled={!result}
-          className="bg-blue-600 text-white py-3 px-4 rounded w-full mt-6 hover:bg-blue-700 disabled:opacity-50"
+          className="bg-blue-600 text-white py-3 px-4 rounded w-full mt-6 hover:bg-blue-700 disabled:opacity-50 transition-colors"
         >
           Avançar
         </button>
